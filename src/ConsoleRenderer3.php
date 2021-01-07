@@ -32,7 +32,8 @@ final class ConsoleRenderer3
 
     public function render(Throwable $exception): void
     {
-        $this->output = new ConsoleOutput(); //new StreamOutput(fopen('php://stderr', 'w'));
+        // Roadrunner expect output in the stderr stream.
+        $this->output = (new ConsoleOutput())->getErrorOutput(); //new StreamOutput(fopen('php://stderr', 'w'));
 
         $this->renderTitleAndDescription2($exception);
 
