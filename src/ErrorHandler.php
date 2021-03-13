@@ -79,23 +79,6 @@ use Throwable;
 final class ErrorHandler
 {
     /**
-     * Set the level to show all errors + disable internal php error display and register the error/exception/shutdown handlers.
-     */
-    //https://github.com/symfony/error-handler/blob/5.x/Debug.php#L21
-    public static function enable(): void
-    {
-        error_reporting(E_ALL);
-        ini_set('display_errors', 'Off');
-        ini_set('html_errors', 'Off');
-        // TODO : voir si on doit aussi utiliser ces 2 setters !!!!
-        //ini_set('log_errors', '0');
-        //ini_set('zend.exception_ignore_args', '0');
-
-
-        self::register();
-    }
-
-    /**
      * Register this error handler.
      */
     // TODO : améliorer le disable errors :   https://github.com/nette/tracy/blob/5e900c8c9aee84b3dbe6b5f2650ade578cc2dcfa/src/Tracy/Debugger/Debugger.php#L181
