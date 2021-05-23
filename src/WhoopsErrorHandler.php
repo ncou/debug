@@ -14,8 +14,8 @@ use Whoops\Run as Whoops;
 use Whoops\Handler\HandlerInterface;
 use Whoops\Handler\PrettyPageHandler as WhoopsPageHandler;
 
-//use Whoops\Handler\PlainTextHandler as WhoopsConsoleHandler;
-use NunoMaduro\Collision\Handler as WhoopsConsoleHandler;
+use Whoops\Handler\PlainTextHandler as WhoopsConsoleHandler;
+//use NunoMaduro\Collision\Handler as WhoopsConsoleHandler;
 
 final class WhoopsErrorHandler
 {
