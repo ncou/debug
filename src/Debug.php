@@ -13,6 +13,9 @@ use Throwable;
 
 //https://github.com/symfony/error-handler/blob/5.x/Debug.php#L21
 
+//https://github.com/cakephp/cakephp/blob/5.x/src/Error/ErrorTrap.php
+//https://github.com/cakephp/cakephp/blob/5.x/src/Error/ExceptionTrap.php
+
 /**
  * Registers the debug tools.
  */

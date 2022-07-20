@@ -11,6 +11,9 @@ use Exception;
 use Symfony\Component\Console\Output\StreamOutput;
 use Throwable;
 
+//https://github.com/cakephp/cakephp/blob/5.x/src/Error/ErrorTrap.php
+//https://github.com/cakephp/cakephp/blob/5.x/src/Error/ExceptionTrap.php
+
 // TODO : ajouter une fonction call qui wrap un error handler avant d'executer le callable !!!!
 //https://github.com/symfony/error-handler/blob/5.x/ErrorHandler.php#L165
 
@@ -85,6 +88,8 @@ final class ErrorHandler
     // https://github.com/nette/tester/blob/bb813b55a9c358ead2897e37d90e29da1644ce41/src/Framework/Environment.php#L100
     public static function register(): void
     {
+        // TODO : avec le passage en PHP8.1 on peut faire un truc du genre pour les callables : set_error_handler($this->handleError(...));
+        // TODO : gérer les arguments pour les exceptions : https://github.com/cakephp/cakephp/blob/32e3c532fea8abe2db8b697f07dfddf4dfc134ca/src/Error/Middleware/ErrorHandlerMiddleware.php#L97
         set_error_handler([self::class, 'handleError']);
         set_exception_handler([self::class, 'handleException']);
         register_shutdown_function([self::class, 'handleShutdown']);
